@@ -393,9 +393,8 @@
                 </div>
                 
                 <div class="nav-section">
-                    <a href="#" class="nav-button">Home</a>
-                    <a href="#" class="nav-button">Catalog</a>
-                    <a href="#" class="nav-button">Resources</a>
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="resources.html" class="nav-button">Resources</a>
                     <a href="#" class="nav-button">About</a>
                 </div>
             </div>
@@ -441,7 +440,9 @@
         // Add smooth scrolling for navigation
         document.querySelectorAll('.nav-button').forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault();
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
                 this.style.transform = 'translateY(-2px) scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = 'translateY(-2px) scale(1)';
